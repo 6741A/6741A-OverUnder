@@ -1,3 +1,72 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           9               
+// GPS8                 gps           21              
+// InertialSensor       inertial      1               
+// RotationLeft         rotation      5               
+// RotationRight        rotation      3               
+// LeftMotors           motor_group   8, 10           
+// RightMotors          motor_group   6, 14           
+// Controller1          controller                    
+// CatapultMotor        motor         7               
+// CataLimit            limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           9               
+// GPS8                 gps           21              
+// InertialSensor       inertial      1               
+// RotationLeft         rotation      5               
+// RotationRight        rotation      3               
+// LeftMotors           motor_group   8, 10           
+// RightMotors          motor_group   6, 14           
+// Controller1          controller                    
+// Catapult             motor         7               
+// CataLimit            limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           9               
+// GPS8                 gps           21              
+// InertialSensor       inertial      1               
+// RotationLeft         rotation      5               
+// RotationRight        rotation      3               
+// LeftMotors           motor_group   8, 10           
+// RightMotors          motor_group   6, 14           
+// Controller1          controller                    
+// Catapult             motor         2               
+// CataLimit            limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           9               
+// GPS8                 gps           21              
+// InertialSensor       inertial      1               
+// RotationLeft         rotation      5               
+// RotationRight        rotation      3               
+// LeftMotors           motor_group   8, 10           
+// RightMotors          motor_group   6, 7            
+// Controller1          controller                    
+// Catapult             motor         2               
+// CataLimit            limit         A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           9               
+// GPS8                 gps           21              
+// InertialSensor       inertial      1               
+// RotationLeft         rotation      5               
+// RotationRight        rotation      3               
+// LeftMotors           motor_group   8, 10           
+// RightMotors          motor_group   6, 7            
+// Controller1          controller                    
+// Catapult             motor         2               
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -22,7 +91,7 @@
 
 #include "vex.h"
 #include "PositionTracker.h"
-#include "Mover.h"
+#include "Robot.h"
 
 using namespace vex;
 
@@ -32,14 +101,15 @@ competition Competition;
 void pre_auton(void) 
 {
   
-  // test
-  
   vexcodeInit();
 
 }
 
+
+
+
 // Instantiate Mover class object
-Mover mover;
+Robot robot;
 
 void autonomous(void) 
 {
@@ -60,7 +130,6 @@ void usercontrol(void)
 
 }
 
-
 int main() 
 {
 
@@ -72,7 +141,6 @@ int main()
   // Prevent main from exiting with an infinite loop.
   while (true) 
   {
-    mover.FieldVisualizer();
     wait(100, msec);
   }
   

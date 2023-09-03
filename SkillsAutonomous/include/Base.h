@@ -3,10 +3,10 @@
 #include "PIDTemplate.h"
 
 #pragma once
-#ifndef MOVER_H
-#define MOVER_H
+#ifndef BASE_H
+#define BASE_H
 
-class Mover : public PositionTracker
+class Base : public PositionTracker
 {
 
   public:

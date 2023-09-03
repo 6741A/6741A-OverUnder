@@ -11,7 +11,7 @@ class PIDTemplate
 
     float error;
 
-    float PIDControlLoop (float a, float b, float c, float d, float e, bool f);
+    float PIDControlLoop(float a, float b, float c, float d, float e, bool f);
 
 };
 

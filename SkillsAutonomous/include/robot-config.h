@@ -11,6 +11,8 @@ extern rotation RotationRight;
 extern motor_group LeftMotors;
 extern motor_group RightMotors;
 extern controller Controller1;
+extern motor CatapultMotor;
+extern limit CataLimit;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

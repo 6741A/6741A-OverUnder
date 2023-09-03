@@ -1,9 +1,9 @@
 // Handles the position tracking procedures, contains odometry algorithm ~~
 
-#include "Mover.h"
+#include "vex.h"
+#include "Base.h"
 #include "PIDTemplate.h"
 #include "PositionTracker.h"
-#include "vex.h"
 
 using namespace vex;
 
@@ -23,7 +23,7 @@ Arguments:
 
 */
 
-void Mover::TurnRobot(float output, float desiredHeading) 
+void Base::TurnRobot(float output, float desiredHeading) 
 {
 
   posTracker.TrackPositionAndHeading();
@@ -66,7 +66,7 @@ Arguments:
 
 */
 
-void Mover::DriveRobot(float output) 
+void Base::DriveRobot(float output) 
 {
 
   // Drives motors according to output
@@ -89,7 +89,7 @@ Arguments:
 
 PIDTemplate pid;
 
-void Mover::Rotate(float desiredHeading, float roomForError) 
+void Base::Rotate(float desiredHeading, float roomForError) 
 {
 
   while (true) 
@@ -139,7 +139,7 @@ Arguments:
 
 */
 
-void Mover::DriveForward(float targetDistance, float roomForError) 
+void Base::DriveForward(float targetDistance, float roomForError) 
 {
 
   RotationLeft.setPosition(0, turns);
@@ -198,7 +198,7 @@ Arguments:
 
 */
 
-void Mover::GoTo(float targetX, float targetY, float rotationError, float distanceError) 
+void Base::GoTo(float targetX, float targetY, float rotationError, float distanceError) 
 {
 
   // Get current position.
