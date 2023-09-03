@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the source code and resources for 6741A Arcturus' participation in the "Over Under" competition for the year 2023-2024. We aimed to provide a comprehensive and intelligent solution for the all of this game's programming challenges.
+This repository contains the source code for 6741A Arcturus' participation in the 2023-2024 Vex Robotics Competition game "Over Under." We aimed to provide a comprehensive and intelligent solution for all of this year's programming challenges.
 
 ## Repository Contents
 - **/SkillsAutonomous**: This directory contains the program we used in the Skills Challenge.
