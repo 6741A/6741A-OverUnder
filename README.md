@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the code and resources for o6741A Arcturus' participation in the "Over Under" competition for the year 2023-2024. We aimed to provide a comprehensive solution for the game's programming challenges.
+This repository contains the source code and resources for 6741A Arcturus' participation in the "Over Under" competition for the year 2023-2024. We aimed to provide a comprehensive and intelligent solution for the all of this game's programming challenges.
 
 ## Repository Contents
 
