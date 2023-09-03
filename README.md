@@ -1,4 +1,4 @@
-# Programs used in the VRC 2023-2024 game "Over Under"
+# Software used in the VRC 2023-2024 game "Over Under"
 
 ## Overview
 
