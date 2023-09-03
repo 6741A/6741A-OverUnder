@@ -17,9 +17,11 @@ motor LeftMotorsMotorA = motor(PORT8, ratio6_1, false);
 motor LeftMotorsMotorB = motor(PORT10, ratio6_1, false);
 motor_group LeftMotors = motor_group(LeftMotorsMotorA, LeftMotorsMotorB);
 motor RightMotorsMotorA = motor(PORT6, ratio6_1, true);
-motor RightMotorsMotorB = motor(PORT7, ratio6_1, true);
+motor RightMotorsMotorB = motor(PORT14, ratio6_1, true);
 motor_group RightMotors = motor_group(RightMotorsMotorA, RightMotorsMotorB);
 controller Controller1 = controller(primary);
+motor CatapultMotor = motor(PORT7, ratio36_1, false);
+limit CataLimit = limit(Brain.ThreeWirePort.A);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
