@@ -1,16 +1,11 @@
 # Programs used in the VRC 2023-2024 game "Over Under"
 
 
-![VEX Robotics Logo]([https://link-to-your-image.png](https://cdn.discordapp.com/attachments/1115513536244879372/1147693134529167491/tech_logo.png))
+![VEX Robotics Logo]((https://cdn.discordapp.com/attachments/1115513536244879372/1147693134529167491/tech_logo.png))
 
 ## Overview
 
 This repository contains the code and resources for o6741A Arcturus' participation in the "Over Under" competition for the year 2023-2024. We aimed to provide a comprehensive solution for the game's programming challenges.
-
-## Table of Contents
-
-- [Repository Contents](#repository-contents)
-- [License](#license)
 
 ## Repository Contents
 
