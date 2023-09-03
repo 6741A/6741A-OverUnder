@@ -1,7 +1,7 @@
 # Programs used in the VRC 2023-2024 game "Over Under"
 
 
-![VEX Robotics Logo]((https://cdn.discordapp.com/attachments/1115513536244879372/1147693134529167491/tech_logo.png))
+https://cdn.discordapp.com/attachments/1115513536244879372/1147693134529167491/tech_logo.png
 
 ## Overview
 
