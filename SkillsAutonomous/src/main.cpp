@@ -32,6 +32,8 @@ competition Competition;
 void pre_auton(void) 
 {
   
+  // test
+  
   vexcodeInit();
 
 }
