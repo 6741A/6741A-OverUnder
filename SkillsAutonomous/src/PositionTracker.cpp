@@ -26,31 +26,31 @@ const float fieldscale = 1.66548042705;
 // ODOMETRY ALGORITHM VARIABLES ~~ DONT TOUCH THESE !
 
 // Change in left and right rotational sensor values
-double deltaLeft, deltaRight;
+float deltaLeft, deltaRight;
 
 // Current left and right rotational sensor values
-double currentLeft, currentRight;
+float currentLeft, currentRight;
 
 // Previous left and right rotational sensor values
-double previousLeft, previousRight;
+float previousLeft, previousRight;
 
 // Change in heading, current heading
-double deltaTheta, Theta;
+float deltaTheta, Theta;
 
 // Intermediate X and Y Position calculations
-double X, Y;
+float X, Y;
 
 // Final X and Y Positions
-double combinedX, combinedY;
+float combinedX, combinedY;
 
 // Change in X and Y Position
-double deltaX, deltaY;
+float deltaX, deltaY;
 
 // Chord for calculating change with arc, absolute heading, final heading
-double sideChord, absHeading, combinedHeading;
+float sideChord, absHeading, combinedHeading;
 
 // Average GPS positional values
-double averageGPSX, averageGPSY;
+float averageGPSX, averageGPSY;
 
 // Global robot positional values
 float robotXPosition, robotYPosition, robotOrientation;
