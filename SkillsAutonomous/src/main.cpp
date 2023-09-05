@@ -64,8 +64,6 @@ int main()
 
   pre_auton();
 
-  robot.StartCatapultMatchLoading();
-
   // Prevent main from exiting with an infinite loop.
   while (true) 
   {
