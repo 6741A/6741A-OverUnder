@@ -16,7 +16,7 @@ using namespace vex;
 
 // A global instance of competition
 competition Competition;
-
+// text
 void pre_auton(void) 
 {
   
