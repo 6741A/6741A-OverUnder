@@ -19,7 +19,7 @@ competition Competition;
 // text
 void pre_auton(void) 
 {
-  
+  //test
   vexcodeInit();
 
 }

@@ -22,6 +22,11 @@ motor_group RightMotors = motor_group(RightMotorsMotorA, RightMotorsMotorB);
 controller Controller1 = controller(primary);
 motor CatapultMotor = motor(PORT7, ratio36_1, false);
 limit CataLimit = limit(Brain.ThreeWirePort.A);
+motor IntakeMotor = motor(PORT20, ratio6_1, false);
+digital_out IntakePistonLeft = digital_out(Brain.ThreeWirePort.B);
+digital_out IntakePistonRight = digital_out(Brain.ThreeWirePort.C);
+digital_out WingPistonLeft = digital_out(Brain.ThreeWirePort.D);
+digital_out WingPistonRight = digital_out(Brain.ThreeWirePort.E);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

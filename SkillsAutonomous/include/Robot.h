@@ -1,6 +1,8 @@
 #include "vex.h"
 #include "Base.h"
 #include "Catapult.h"
+#include "Intake.h"
+#include "Wings.h"
 
 #pragma once
 #ifndef ROBOT_H
@@ -20,6 +22,18 @@ class Robot
     void Rotate (float a, float b);
     void DriveForward (float a, float b);
     void GoTo (float a, float b , float c, float d);
+
+    // Intake Functionality
+    void EnableIntake();
+    void ReverseIntake();
+    void DisableIntake();
+    void ExtendIntake();
+    void RetractIntake();
+
+    // Wings Functionality
+    void ExtendWings();
+    void RetractWings();
+
   
 };
 
