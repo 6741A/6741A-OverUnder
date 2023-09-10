@@ -11,14 +11,16 @@ using namespace vex;
 
 Catapult cata;
 
+bool cataDrawed = false;
+
 void Robot::StartCatapultMatchLoading()
 { cata.StartCatapultMatchLoading(); }
 
 void Robot::RetractCatapult()
-{ cata.RetractCatapult(); }
+{ cata.RetractCatapult(); cataDrawed = true; }
 
 void Robot::LaunchCatapult()
-{ cata.LaunchCatapult(); }
+{ cata.LaunchCatapult(); cataDrawed = false; }
 
 // Drivetrain Functionality
 
@@ -37,14 +39,16 @@ void Robot::GoTo(float targetX, float targetY, float rotationError, float distan
 
 Intake intake;
 
+bool intakeEnabled = false;
+
 void Robot::EnableIntake()
-{ intake.EnableIntake(); }
+{ intake.EnableIntake(); intakeEnabled = true; }
 
 void Robot::ReverseIntake()
-{ intake.ReverseIntake(); }
+{ intake.ReverseIntake(); intakeEnabled = true; }
 
 void Robot::DisableIntake()
-{ intake.DisableIntake(); }
+{ intake.DisableIntake(); intakeEnabled = false; }
 
 void Robot::ExtendIntake()
 { intake.ExtendIntake(); }
@@ -56,9 +60,11 @@ void Robot::RetractIntake()
 
 Wings wings;
 
+bool wingsExtended;
+
 void Robot::ExtendWings()
-{ wings.ExtendWings(); }
+{ wings.ExtendWings(); wingsExtended = true; }
 
 void Robot::RetractWings()
-{ wings.RetractWings(); }
+{ wings.RetractWings(); wingsExtended = false; }
 
