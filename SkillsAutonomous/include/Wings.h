@@ -8,7 +8,7 @@ class Wings
 { 
 
   public:
-
+    
     void ExtendWings();
     void RetractWings();
 

@@ -13,6 +13,12 @@ class Robot
 
   public:
 
+    Base base;
+
+    bool intakeEnabled;
+    bool cataDrawed;
+    bool wingsExtended;
+
     // Catapult Functionality
     void StartCatapultMatchLoading();
     void RetractCatapult();

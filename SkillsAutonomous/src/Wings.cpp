@@ -6,8 +6,8 @@ using namespace vex;
 void Wings::ExtendWings()
 {
 
-  WingPistonLeft = true;
-  WingPistonRight = true;
+  WingPistonLeft.set(true);
+  WingPistonRight.set(true);
 
 }
 
@@ -15,7 +15,7 @@ void Wings::ExtendWings()
 void Wings::RetractWings()
 {
 
-  WingPistonLeft = false;
-  WingPistonRight = false;
+  WingPistonLeft.set(false);
+  WingPistonRight.set(false);
 
 }

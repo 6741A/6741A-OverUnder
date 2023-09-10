@@ -3,7 +3,6 @@
 
 using namespace vex;
 
-
 void Catapult::RetractCatapult()
 {
 
