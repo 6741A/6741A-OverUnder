@@ -14,6 +14,9 @@ class Robot
   public:
 
     Base base;
+    Wings wings;
+    Intake intake;
+    Catapult catapult;
 
     bool intakeEnabled;
     bool cataDrawed;

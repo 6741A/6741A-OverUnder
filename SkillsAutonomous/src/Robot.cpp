@@ -9,18 +9,18 @@ using namespace vex;
 
 // Catapult Functionality
 
-Catapult cata;
+Catapult catapult;
 
 bool cataDrawed = false;
 
 void Robot::StartCatapultMatchLoading()
-{ cata.StartCatapultMatchLoading(); }
+{ catapult.StartCatapultMatchLoading(); }
 
 void Robot::RetractCatapult()
-{ cata.RetractCatapult(); cataDrawed = true; }
+{ catapult.RetractCatapult(); cataDrawed = true; }
 
 void Robot::LaunchCatapult()
-{ cata.LaunchCatapult(); cataDrawed = false; }
+{ catapult.LaunchCatapult(); cataDrawed = false; }
 
 // Drivetrain Functionality
 
