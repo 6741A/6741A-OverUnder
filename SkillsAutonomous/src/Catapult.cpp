@@ -7,10 +7,6 @@ void Catapult::RetractCatapult()
 {
 
   CatapultMotor.spin(forward, 100, percent);
-
-  waitUntil(CataLimit);
-
-  CatapultMotor.stop(hold);
   
 }
 
@@ -18,10 +14,6 @@ void Catapult::LaunchCatapult()
 {
 
   CatapultMotor.spin(forward, 100, percent);
-
-  waitUntil(!CataLimit);
-
-  CatapultMotor.stop();
 
 }
 

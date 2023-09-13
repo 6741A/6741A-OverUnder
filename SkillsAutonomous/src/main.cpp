@@ -38,13 +38,14 @@ void pre_auton(void)
 
   robot.base.TrackPositionAndHeading();
 
+
 }
 
 
 
 void autonomous(void) 
 {
-
+/*
   // 0. Rotate parallel with match load bar, and back into it
 
   robot.base.Rotate(45, 5);
@@ -80,7 +81,7 @@ void autonomous(void)
 
   // 7. Drive ⅓ distance of field
 
-
+*/
 
   // 8. Face goal, extend wings, push nuts into goal
 
@@ -118,8 +119,8 @@ void DriverControls()
 
   // Drivetrain Controls
 
-  LeftMotors.spin(forward, (Controller1.Axis3.value() + (Controller1.Axis1.value() * 0.5) * 2), percent);
-  RightMotors.spin(forward, (Controller1.Axis3.value() - (Controller1.Axis1.value() * 0.5) * 2), percent);
+  LeftMotors.spin(forward, (Controller1.Axis3.value() + (Controller1.Axis1.value() * 0.35) * 2), percent);
+  RightMotors.spin(forward, (Controller1.Axis3.value() - (Controller1.Axis1.value() * 0.35) * 2), percent);
 
   // Intake Controls
 
@@ -175,12 +176,17 @@ void DriverControls()
     
   }
 
+  if (CataLimit)
+  {
+    CatapultMotor.stop(hold);
+  }
+
 }
 
 
 void usercontrol(void) 
 {
-  InertialSensor.startCalibration();
+ /* InertialSensor.startCalibration();
 InertialSensor.resetHeading();
 
   RotationLeft.setPosition(0, degrees);
@@ -190,7 +196,7 @@ InertialSensor.resetHeading();
   robot.base.robotYPosition = 0;
   robot.base.robotOrientation = 0;
 
-  robot.base.TrackPositionAndHeading();
+  robot.base.TrackPositionAndHeading();*/
   
 
 
@@ -198,7 +204,7 @@ InertialSensor.resetHeading();
   while (1) 
   {
 
-    robot.base.TrackPositionAndHeading();
+    //robot.base.TrackPositionAndHeading();
     DriverControls();
 
     wait(20, msec);

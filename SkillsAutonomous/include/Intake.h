@@ -8,7 +8,7 @@ class Intake
 { 
 
   public:
-
+    
     void EnableIntake();
     void ReverseIntake();
     void DisableIntake();
