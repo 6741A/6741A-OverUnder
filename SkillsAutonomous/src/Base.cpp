@@ -23,6 +23,8 @@ Arguments:
 
 */
 
+float shortestTurn = 0;
+
 void Base::TurnRobot(float output, float desiredHeading) 
 {
 
@@ -30,11 +32,11 @@ void Base::TurnRobot(float output, float desiredHeading)
 
   // Calculation to determine which direction rotating to reach desired heading
   // is shortest
-  float shortestTurn = ((int(posTracker.robotOrientation) - int(desiredHeading + (3 * M_PI)) % int((2 * M_PI)))) - M_PI;
-
+ // shortestTurn = ((int(posTracker.robotOrientation) - int(desiredHeading + (3 * M_PI)) % int((2 * M_PI)))) - M_PI;
+  shortestTurn = (int(desiredHeading) - int(posTracker.robotOrientation) + 360) % 360;
   // If the calculated value is greater than zero, then rotation clockwise is
   // shorter
-  if (shortestTurn > 0) 
+  if (shortestTurn > 180) 
   {
 
     // Rotate motors clockwise by output
@@ -97,16 +99,16 @@ void Base::Rotate(float desiredHeading, float roomForError)
 
     posTracker.TrackPositionAndHeading();
 
-    TurnRobot(pid.PIDControlLoop(2, 2, 2, desiredHeading, posTracker.robotOrientation, true), desiredHeading);
+    TurnRobot(pid.PIDControlLoop(0.03, 0, 0, desiredHeading, posTracker.robotOrientation, false), desiredHeading);
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(0, 0);
-    Controller1.Screen.print(pid.error);
+    Controller1.Screen.print(desiredHeading);
     Controller1.Screen.print("    ");
     Controller1.Screen.print(posTracker.robotOrientation);
 
-    if (abs(int(pid.error)) < roomForError) 
+    if (posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError)
     {
 
       // Stop motors
@@ -145,7 +147,7 @@ void Base::DriveForward(float targetDistance, float roomForError)
   RotationLeft.setPosition(0, turns);
   RotationRight.setPosition(0, turns);
 
-  targetDistance *= 3;
+  targetDistance /= 3;
 
   while (true) 
   {
@@ -154,16 +156,17 @@ void Base::DriveForward(float targetDistance, float roomForError)
 
     float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
 
-    DriveRobot(pid.PIDControlLoop(2, 2, 2, targetDistance, rotations, false));
+    DriveRobot(pid.PIDControlLoop(1.2, 0, 0, targetDistance, rotations, false));
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(0, 0);
-    Controller1.Screen.print(pid.error);
+    Controller1.Screen.print(targetDistance);
     Controller1.Screen.print("    ");
-    Controller1.Screen.print(posTracker.robotOrientation);
-
-    if (abs(int(pid.error)) < roomForError) 
+    Controller1.Screen.print(rotations);
+    //Controller1.Screen.print(pid.error);
+//posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
+    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) 
     {
 
       // Stop motors

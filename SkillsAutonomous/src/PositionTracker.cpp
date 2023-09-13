@@ -1,4 +1,3 @@
-
 // Handles the position tracking procedures, contains odometry algorithm ~~
 
 #include "PositionTracker.h"
@@ -71,7 +70,7 @@ void PositionTracker::UpdateSensorValues()
 
   // Updates left and right rotation sensor values
   currentLeft = (RotationLeft.position(degrees));
-  currentRight = (RotationLeft.position(degrees));
+  currentRight = (RotationRight.position(degrees));
 
   // Calculates change in inches travelled
   deltaLeft = ((currentLeft - previousLeft) * wheelCircumference) / degreesPerRotation;
@@ -232,7 +231,7 @@ void PositionTracker::CalculateHeading()
 
     // Combines the heading by taking the average of the odometry value and
     // inertial reading
-    combinedHeading = (((InertialSensor.heading(degrees) * 1.05) * (M_PI / 180)) + Theta) / 2;
+    combinedHeading = (((InertialSensor.heading(degrees) * 1.05) * (M_PI / 180)) + Theta * (M_PI / 180));
 
   }
 
@@ -359,12 +358,15 @@ void PositionTracker::TrackPositionAndHeading()
   // Updates global X, Y, and Heading values (in degrees)
   robotXPosition = X;
   robotYPosition = Y;
-  robotOrientation = combinedHeading * (180 / M_PI);
+  robotOrientation = (combinedHeading * (180 / M_PI));
 
   // Visualize field and robot on brain for debugging purposes
   FieldVisualizer();
-
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(0, 0);
+    Controller1.Screen.print(robotOrientation);
   // Wait every iteration to not overload brain
   wait(5, msec);
 
 }
+
