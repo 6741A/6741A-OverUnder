@@ -72,6 +72,15 @@ void pre_auton(void)
   robot.base.robotYPosition = 0;
   robot.base.robotOrientation = 0;
 
+        robot.base.robotOrientation = 0;
+InertialSensor.setHeading(0, degrees);
+    RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+  InertialSensor.calibrate();
+  wait(3,sec);
+
+
   robot.base.TrackPositionAndHeading();
 
 
@@ -81,30 +90,24 @@ void pre_auton(void)
 
 void autonomous(void) 
 {
-    robot.base.robotOrientation = 0;
-InertialSensor.setHeading(0, degrees);
-    RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-  InertialSensor.calibrate();
-  wait(3,sec);
 
 
   robot.base.DriveForward(-30,5);
-  wait(1,sec);
+  wait(0,sec);
   robot.base.DriveForward(16,5);
-  robot.base.Rotate(105, 3);
+  robot.base.Rotate(84, 8);
   robot.intake.ReverseIntake();
   //robot.catapult.RetractCatapult();
   //wait(0.7, sec);
   //CatapultMotor.stop(hold);
   //waitUntil(robot.cataDrawed);
   robot.base.DriveForward(35,5);
+  wait(0.5, sec);
   //robot.base.Rotate(0,5);
-  wait(1, sec);
-  robot.base.DriveForward(-25,5);
-  robot.base.Rotate(-160,5);
-  robot.base.DriveForward(15,5);
+  //wait(1, sec);
+  robot.base.DriveForward(-18,5);
+  robot.base.Rotate(40,10);
+  robot.base.DriveForward(28,5);
 
 
 /*
