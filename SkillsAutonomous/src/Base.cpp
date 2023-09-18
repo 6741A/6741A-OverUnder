@@ -156,7 +156,7 @@ void Base::DriveForward(float targetDistance, float roomForError)
 
     float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
 
-    DriveRobot(pid.PIDControlLoop(1.2, 0, 0, targetDistance, rotations, false));
+    DriveRobot(pid.PIDControlLoop(6, 0, 0, targetDistance, rotations, false));
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();

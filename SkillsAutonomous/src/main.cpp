@@ -1,3 +1,41 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           15              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      11              
+// RotationRight        rotation      12              
+// LeftMotors           motor_group   3, 2            
+// RightMotors          motor_group   6, 5            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakeMotor          motor         1               
+// IntakePistonLeft     digital_out   H               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   D               
+// WingPistonRight      digital_out   E               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           15              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      11              
+// RotationRight        rotation      12              
+// LeftMotors           motor_group   3, 2            
+// RightMotors          motor_group   6, 5            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakeMotor          motor         1               
+// IntakePistonLeft     digital_out   H               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   D               
+// WingPistonRight      digital_out   E               
+// ---- END VEXCODE CONFIGURED DEVICES ----
 
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
@@ -26,11 +64,9 @@ Robot robot;
 void pre_auton(void) 
 {
   //test
-
   vexcodeInit();
 
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
+
 
   robot.base.robotXPosition = 0;
   robot.base.robotYPosition = 0;
@@ -45,6 +81,32 @@ void pre_auton(void)
 
 void autonomous(void) 
 {
+    robot.base.robotOrientation = 0;
+InertialSensor.setHeading(0, degrees);
+    RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+  InertialSensor.calibrate();
+  wait(3,sec);
+
+
+  robot.base.DriveForward(-30,5);
+  wait(1,sec);
+  robot.base.DriveForward(16,5);
+  robot.base.Rotate(105, 3);
+  robot.intake.ReverseIntake();
+  //robot.catapult.RetractCatapult();
+  //wait(0.7, sec);
+  //CatapultMotor.stop(hold);
+  //waitUntil(robot.cataDrawed);
+  robot.base.DriveForward(35,5);
+  //robot.base.Rotate(0,5);
+  wait(1, sec);
+  robot.base.DriveForward(-25,5);
+  robot.base.Rotate(-160,5);
+  robot.base.DriveForward(15,5);
+
+
 /*
   // 0. Rotate parallel with match load bar, and back into it
 

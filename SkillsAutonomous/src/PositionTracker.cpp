@@ -235,6 +235,8 @@ void PositionTracker::CalculateHeading()
 
   }
 
+ // combinedHeading = InertialSensor.heading(degrees);
+
 }
 
 /*
