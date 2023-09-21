@@ -99,7 +99,7 @@ void Base::Rotate(float desiredHeading, float roomForError)
 
     posTracker.TrackPositionAndHeading();
 
-    TurnRobot(pid.PIDControlLoop(0.03, 0, 0, desiredHeading, posTracker.robotOrientation, false), desiredHeading);
+    TurnRobot(pid.PIDControlLoop(0.01, 0, 0, desiredHeading, posTracker.robotOrientation, false), desiredHeading);
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();
@@ -124,6 +124,37 @@ void Base::Rotate(float desiredHeading, float roomForError)
       break;
 
     }
+  }
+}
+
+void Base::RotateLocally(float desiredHeading, float roomForError) {
+
+  shortestTurn = (int(desiredHeading) - int(InertialSensor.heading(degrees)) + 360) % 360;
+
+  if (shortestTurn > 180) 
+  {
+
+    // Rotate motors clockwise by output
+    LeftMotors.spin(reverse, 50, percent);
+    RightMotors.spin(forward, 50, percent);
+
+  }
+  // If the calculated value is less than zero, then rotation counterclockwise
+  // is shorter
+  else 
+  {
+
+    // Rotate motors counterclockwise by output
+    LeftMotors.spin(forward, 50, percent);
+    RightMotors.spin(reverse, 50, percent);
+
+  }
+
+  while (abs(int(InertialSensor.heading(degrees)) - int(desiredHeading)) > roomForError)
+  {
+
+    LeftMotors.stop();
+    RightMotors.stop();
 
   }
 

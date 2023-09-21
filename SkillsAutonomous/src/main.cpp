@@ -1,41 +1,3 @@
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// GPS9                 gps           15              
-// GPS8                 gps           21              
-// InertialSensor       inertial      19              
-// RotationLeft         rotation      11              
-// RotationRight        rotation      12              
-// LeftMotors           motor_group   3, 2            
-// RightMotors          motor_group   6, 5            
-// Controller1          controller                    
-// CatapultMotor        motor         10              
-// CataLimit            limit         A               
-// IntakeMotor          motor         1               
-// IntakePistonLeft     digital_out   H               
-// IntakePistonRight    digital_out   C               
-// WingPistonLeft       digital_out   D               
-// WingPistonRight      digital_out   E               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// GPS9                 gps           15              
-// GPS8                 gps           21              
-// InertialSensor       inertial      19              
-// RotationLeft         rotation      11              
-// RotationRight        rotation      12              
-// LeftMotors           motor_group   3, 2            
-// RightMotors          motor_group   6, 5            
-// Controller1          controller                    
-// CatapultMotor        motor         10              
-// CataLimit            limit         A               
-// IntakeMotor          motor         1               
-// IntakePistonLeft     digital_out   H               
-// IntakePistonRight    digital_out   C               
-// WingPistonLeft       digital_out   D               
-// WingPistonRight      digital_out   E               
-// ---- END VEXCODE CONFIGURED DEVICES ----
 
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
@@ -60,42 +22,35 @@ competition Competition;
 // Instantiate Mover class object
 Robot robot;
 
-// text
-void pre_auton(void) 
-{
-  //test
+void pre_auton(void) {
+
   vexcodeInit();
-
-
 
   robot.base.robotXPosition = 0;
   robot.base.robotYPosition = 0;
   robot.base.robotOrientation = 0;
 
-        robot.base.robotOrientation = 0;
-InertialSensor.setHeading(0, degrees);
-    RotationLeft.setPosition(0, degrees);
+  robot.base.robotOrientation = 0;
+  InertialSensor.setHeading(0, degrees);
+  RotationLeft.setPosition(0, degrees);
   RotationRight.setPosition(0, degrees);
 
   InertialSensor.calibrate();
   wait(3,sec);
 
-
   robot.base.TrackPositionAndHeading();
-
 
 }
 
 
 
-void autonomous(void) 
-{
-
+void autonomous(void) {
 
   robot.base.DriveForward(-30,5);
-  wait(0,sec);
-  robot.base.DriveForward(16,5);
+  wait(0.5,sec);
+  robot.base.DriveForward(18,5);
   robot.base.Rotate(84, 8);
+  //robot.base.Rotate(300, 10);
   robot.intake.ReverseIntake();
   //robot.catapult.RetractCatapult();
   //wait(0.7, sec);
@@ -107,6 +62,7 @@ void autonomous(void)
   //wait(1, sec);
   robot.base.DriveForward(-18,5);
   robot.base.Rotate(40,10);
+  //robot.base.Rotate(220, 10);
   robot.base.DriveForward(28,5);
 
 
@@ -174,13 +130,9 @@ void autonomous(void)
 
   // 14. Face goal, extend wings, push nuts into goal
 
-
-
-
 }
 
-void DriverControls()
-{
+void DriverControls() {
 
   // Drivetrain Controls
 
@@ -189,12 +141,19 @@ void DriverControls()
 
   // Intake Controls
 
-  if (Controller1.ButtonR2.pressing())
-  {
+  if (Controller1.ButtonR2.pressing()) {
 
     // Enable and disable intake with every other R2 press
-    if (robot.intakeEnabled) { robot.DisableIntake(); }
-    else { robot.EnableIntake(); }
+    if (robot.intakeEnabled) { 
+
+      robot.DisableIntake();
+
+    }
+    else { 
+
+      robot.EnableIntake(); 
+      
+    }
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
@@ -215,17 +174,32 @@ void DriverControls()
 
   // Catapult Controls 
 
+  if (!robot.cataDrawed)
+  {
+
+    CatapultMotor.spin(forward, 100, percent);
+
+    if (CataLimit)
+    {
+
+      CatapultMotor.stop(hold);
+      robot.cataDrawed = true;
+      
+    }
+
+  }
+
   if (Controller1.ButtonB.pressing())
   {
 
-    // Draw back and launch catapult with every other B press
-    if (robot.cataDrawed) { robot.LaunchCatapult(); }
-    else { robot.RetractCatapult(); }
+    CatapultMotor.spin(forward, 100, percent);
+    robot.cataDrawed = false;
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
     
   }
+
 
   // Wing Controls
 

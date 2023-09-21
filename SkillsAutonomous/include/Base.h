@@ -23,6 +23,9 @@ class Base : public PositionTracker
 
     void GoTo (float a, float b , float c, float d);
 
+    void RotateLocally(float a, float b);
+
+
 };
 
 #endif
