@@ -45,7 +45,7 @@ void pre_auton(void) {
 
 
 void autonomous(void) {
-
+/*
   robot.base.DriveForward(-30,5);
   wait(0.5,sec);
   robot.base.DriveForward(18,5);
@@ -64,6 +64,13 @@ void autonomous(void) {
   robot.base.Rotate(40,10);
   //robot.base.Rotate(220, 10);
   robot.base.DriveForward(28,5);
+*/
+
+robot.catapult.StartCatapultMatchLoading();
+
+robot.base.RotateLocally(-20, 10);
+
+robot.base.DriveForward(40, 10);
 
 
 /*

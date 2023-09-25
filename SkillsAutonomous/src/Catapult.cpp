@@ -24,9 +24,12 @@ void Catapult::StartCatapultMatchLoading()
 
   while (launches < 44)
   {
-    RetractCatapult();
-    LaunchCatapult();
-    launches++;
+    CatapultMotor.spin(forward, 100, percent);
+    if (CataLimit)
+    {
+      launches++;
+      wait(0.2, msec);
+    }
   }
   
 }
