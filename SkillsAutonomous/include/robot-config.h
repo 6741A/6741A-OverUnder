@@ -13,11 +13,11 @@ extern motor_group RightMotors;
 extern controller Controller1;
 extern motor CatapultMotor;
 extern limit CataLimit;
-extern motor IntakeMotor;
 extern digital_out IntakePistonLeft;
 extern digital_out IntakePistonRight;
 extern digital_out WingPistonLeft;
 extern digital_out WingPistonRight;
+extern motor_group IntakeMotor;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

@@ -131,12 +131,16 @@ void Base::RotateLocally(float desiredHeading, float roomForError) {
 
   shortestTurn = (int(desiredHeading) - int(InertialSensor.heading(degrees)) + 360) % 360;
 
-  if (shortestTurn > 180) 
+
+  while (abs(int(InertialSensor.heading(degrees)) - int(desiredHeading)) > roomForError)
+  {
+
+      if (shortestTurn > 180) 
   {
 
     // Rotate motors clockwise by output
-    LeftMotors.spin(reverse, 50, percent);
-    RightMotors.spin(forward, 50, percent);
+    LeftMotors.spin(reverse, 25, percent);
+    RightMotors.spin(forward, 25, percent);
 
   }
   // If the calculated value is less than zero, then rotation counterclockwise
@@ -145,18 +149,17 @@ void Base::RotateLocally(float desiredHeading, float roomForError) {
   {
 
     // Rotate motors counterclockwise by output
-    LeftMotors.spin(forward, 50, percent);
-    RightMotors.spin(reverse, 50, percent);
+    LeftMotors.spin(forward, 25, percent);
+    RightMotors.spin(reverse, 25, percent);
 
   }
 
-  while (abs(int(InertialSensor.heading(degrees)) - int(desiredHeading)) > roomForError)
-  {
 
-    LeftMotors.stop();
+  }
+
+      LeftMotors.stop();
     RightMotors.stop();
-
-  }
+    Controller1.Screen.print("done");
 
 }
 
@@ -187,7 +190,7 @@ void Base::DriveForward(float targetDistance, float roomForError)
 
     float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
 
-    DriveRobot(pid.PIDControlLoop(6, 0, 0, targetDistance, rotations, false));
+    DriveRobot(pid.PIDControlLoop(4, 0, 0, targetDistance, rotations, false));
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();
@@ -217,6 +220,49 @@ void Base::DriveForward(float targetDistance, float roomForError)
   }
 
 }
+
+void Base::ForwardLocally(float targetDistance, float pow, float roomForError) 
+{
+
+  LeftMotors.spin(forward, pow, percent);
+  RightMotors.spin(forward, pow, percent);
+
+  while (true) 
+  {
+
+    float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
+
+
+    // Print values to controller for debugging purposes
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(0, 0);
+    Controller1.Screen.print(targetDistance);
+    Controller1.Screen.print("    ");
+    Controller1.Screen.print(rotations);
+
+
+
+    //Controller1.Screen.print(pid.error);
+//posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
+    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) 
+    {
+
+      // Stop motors
+      LeftMotors.stop();
+      RightMotors.stop();
+
+      // Print done for debugging purposes
+     // Controller1.Screen.clearScreen();
+      Controller1.Screen.print("Done!");
+     // Controller1.Screen.print(posTracker.robotOrientation);
+
+      // Exit control loop
+      break;
+
+    }
+  }
+}
+
 
 /*
 

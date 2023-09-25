@@ -6,14 +6,14 @@ using namespace vex;
 void Intake::EnableIntake()
 {
 
-  IntakeMotor.spin(forward, 75, percent);
+  IntakeMotor.spin(forward, 100, percent);
 
 }
 
 void Intake::ReverseIntake()
 {
 
-  IntakeMotor.spin(reverse, 75, percent);
+  IntakeMotor.spin(reverse, 100, percent);
 
 }
 

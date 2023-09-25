@@ -25,6 +25,9 @@ class Base : public PositionTracker
 
     void RotateLocally(float a, float b);
 
+    void ForwardLocally(float a, float b, float c);
+
+
 
 };
 

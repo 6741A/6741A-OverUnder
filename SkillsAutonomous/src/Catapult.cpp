@@ -27,9 +27,15 @@ void Catapult::StartCatapultMatchLoading()
     CatapultMotor.spin(forward, 100, percent);
     if (CataLimit)
     {
+      Controller1.Screen.clearScreen();
+      Controller1.Screen.setCursor(0,0);
+      Controller1.Screen.print(launches);
+      CatapultMotor.spin(forward, 100, percent);
+      waitUntil(!CataLimit);
       launches++;
-      wait(0.2, msec);
     }
   }
+
+  CatapultMotor.stop();
   
 }
