@@ -23,7 +23,7 @@ class Base : public PositionTracker
 
     void GoTo (float a, float b , float c, float d);
 
-    void RotateLocally(float a, float b);
+    void RotateLocally(float a, float b, float c);
 
     void ForwardLocally(float a, float b, float c);
 

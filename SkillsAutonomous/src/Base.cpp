@@ -127,7 +127,7 @@ void Base::Rotate(float desiredHeading, float roomForError)
   }
 }
 
-void Base::RotateLocally(float desiredHeading, float roomForError) {
+void Base::RotateLocally(float desiredHeading, float pow, float roomForError) {
 
   shortestTurn = (int(desiredHeading) - int(InertialSensor.heading(degrees)) + 360) % 360;
 
@@ -139,8 +139,8 @@ void Base::RotateLocally(float desiredHeading, float roomForError) {
   {
 
     // Rotate motors clockwise by output
-    LeftMotors.spin(reverse, 25, percent);
-    RightMotors.spin(forward, 25, percent);
+    LeftMotors.spin(reverse, pow, percent);
+    RightMotors.spin(forward, pow, percent);
 
   }
   // If the calculated value is less than zero, then rotation counterclockwise
@@ -149,16 +149,16 @@ void Base::RotateLocally(float desiredHeading, float roomForError) {
   {
 
     // Rotate motors counterclockwise by output
-    LeftMotors.spin(forward, 25, percent);
-    RightMotors.spin(reverse, 25, percent);
+    LeftMotors.spin(forward, pow, percent);
+    RightMotors.spin(reverse, pow, percent);
 
   }
 
 
   }
 
-      LeftMotors.stop();
-    RightMotors.stop();
+      LeftMotors.stop(hold);
+    RightMotors.stop(hold);
     Controller1.Screen.print("done");
 
 }
@@ -204,8 +204,8 @@ void Base::DriveForward(float targetDistance, float roomForError)
     {
 
       // Stop motors
-      LeftMotors.stop();
-      RightMotors.stop();
+      LeftMotors.stop(hold);
+      RightMotors.stop(hold);
 
       // Print done for debugging purposes
       Controller1.Screen.clearScreen();
@@ -248,8 +248,8 @@ void Base::ForwardLocally(float targetDistance, float pow, float roomForError)
     {
 
       // Stop motors
-      LeftMotors.stop();
-      RightMotors.stop();
+      LeftMotors.stop(hold);
+      RightMotors.stop(hold);
 
       // Print done for debugging purposes
      // Controller1.Screen.clearScreen();
