@@ -24,7 +24,9 @@ void Catapult::StartCatapultMatchLoading()
 
   while (launches < 44)
   {
+
     CatapultMotor.spin(forward, 100, percent);
+
     if (CataLimit)
     {
       Controller1.Screen.clearScreen();
@@ -34,6 +36,12 @@ void Catapult::StartCatapultMatchLoading()
       waitUntil(!CataLimit);
       launches++;
     }
+
+    if (launches == 40)
+    {
+      Controller1.rumble(". . . .");
+    }
+
   }
 
   CatapultMotor.stop();

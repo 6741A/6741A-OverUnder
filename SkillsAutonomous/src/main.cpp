@@ -385,7 +385,7 @@ Robot robot;
 void pre_auton(void) {
 
   vexcodeInit();
-
+/*
   robot.base.robotXPosition = 0;
   robot.base.robotYPosition = 0;
   robot.base.robotOrientation = 0;
@@ -399,7 +399,7 @@ void pre_auton(void) {
   wait(3,sec);
 
   robot.base.TrackPositionAndHeading();
-
+*/
 }
 
 
@@ -431,9 +431,20 @@ void autonomous(void) {
 //robot.base.DriveForward(-10, 5);
 
 //wait(1, sec);
-robot.base.RotateLocally(349, 3);
 
-robot.base.ForwardLocally(20, 50, 10);
+robot.base.RotateLocally(348, 2);
+wait(1,sec);
+robot.catapult.RetractCatapult();
+waitUntil(CataLimit);
+CatapultMotor.stop(hold);
+
+robot.base.ForwardLocally(-35, 50, 10);
+
+robot.base.RotateLocally(14, 2);
+
+robot.base.ForwardLocally(-50, 50, 5);
+
+
 
 
 
@@ -610,7 +621,7 @@ InertialSensor.resetHeading();
   robot.base.TrackPositionAndHeading();*/
   
 
-
+  robot.catapult.StartCatapultMatchLoading();
 
   while (1) 
   {
