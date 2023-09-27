@@ -404,6 +404,8 @@ void pre_auton(void) {
 
 
 void autonomous(void) {
+
+  // Match Auton
 /*
   robot.base.DriveForward(-30,5);
   wait(0.5,sec);
@@ -424,37 +426,54 @@ void autonomous(void) {
   //robot.base.Rotate(220, 10);
   robot.base.DriveForward(28,5);
 */
+/*
+// Skill auton through hallway
 
 //robot.catapult.StartCatapultMatchLoading();
-//wait(1, sec);
-//robot.base.DriveForward(-10, 5);
 
-//wait(1, sec);
-
-robot.base.RotateLocally(344, 20, 4);
+robot.base.RotateLocally(342, 25, 3);
 wait(1,sec);
 robot.catapult.RetractCatapult();
 waitUntil(CataLimit);
 CatapultMotor.stop(hold);
 
-robot.base.ForwardLocally(-34, 35, 10);
+robot.base.ForwardLocally(-36, 25, 10);
 wait(0.2, sec);
 
 robot.base.RotateLocally(16, 25, 2);
 wait(0.2, sec);
 
-robot.base.ForwardLocally(-20, 35, 10);
-wait(0.5, sec);
-/*
-robot.base.ForwardLocally(6, 70, 5);
+robot.base.ForwardLocally(-46, 60, 10);
 wait(0.5, sec);
 
-robot.base.ForwardLocally(-6, 70, 5);
+robot.base.ForwardLocally(12, -25, 10);
 wait(0.5, sec);
 
-robot.base.ForwardLocally(6, 70, 5);*/
+robot.base.ForwardLocally(-46, 60, 10);
+wait(0.5, sec);*/
 
+// Skill auton over barrier
 
+//robot.catapult.StartCatapultMatchLoading();
+// Go to middle of field
+robot.base.ForwardLocally(-20, 25, 10);
+wait(0.2, sec);
+// Retract cata
+robot.catapult.RetractCatapult();
+waitUntil(CataLimit);
+CatapultMotor.stop(hold);
+// Point to front of field
+robot.base.RotateLocally(342, 25, 3);
+wait(1,sec);
+// Drive over barrier and push nuts into goal
+robot.base.ForwardLocally(-50, 40, 10);
+wait(0.2, sec);
+// Back up
+robot.base.ForwardLocally(50, -25, 10);
+wait(0.2, sec);
+// Ram into goal again
+robot.base.ForwardLocally(-50, 40, 10);
+wait(0.2, sec);
 
 
 
