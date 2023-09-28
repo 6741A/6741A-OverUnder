@@ -19,6 +19,7 @@ class Robot
     Catapult catapult;
 
     bool intakeEnabled;
+    bool intakeExtended;
     bool cataDrawed;
     bool wingsExtended;
 

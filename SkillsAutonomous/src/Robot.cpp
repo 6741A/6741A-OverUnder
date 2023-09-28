@@ -40,6 +40,7 @@ void Robot::GoTo(float targetX, float targetY, float rotationError, float distan
 Intake intake;
 
 bool intakeEnabled = false;
+bool intakeExtended = false;
 
 void Robot::EnableIntake()
 { intake.EnableIntake(); intakeEnabled = true; }
@@ -51,10 +52,10 @@ void Robot::DisableIntake()
 { intake.DisableIntake(); intakeEnabled = false; }
 
 void Robot::ExtendIntake()
-{ intake.ExtendIntake(); }
+{ intake.ExtendIntake(); intakeExtended = true; }
 
 void Robot::RetractIntake()
-{ intake.RetractIntake(); }
+{ intake.RetractIntake(); intakeExtended = false; }
 
 // Wings Functionality
 
