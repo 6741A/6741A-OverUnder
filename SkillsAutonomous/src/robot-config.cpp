@@ -8,27 +8,28 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-gps GPS9 = gps(PORT13, 101.60, 152.40, mm, 90);
+gps GPS9 = gps(PORT18, 101.60, 152.40, mm, 90);
 gps GPS8 = gps(PORT21, 0.00, 0.00, mm, 180);
-inertial InertialSensor = inertial(PORT19);
+inertial InertialSensor = inertial(PORT13);
 rotation RotationLeft = rotation(PORT20, true);
-rotation RotationRight = rotation(PORT18, false);
+rotation RotationRight = rotation(PORT7, false);
 motor LeftMotorsMotorA = motor(PORT3, ratio6_1, true);
-motor LeftMotorsMotorB = motor(PORT11, ratio6_1, true);
+motor LeftMotorsMotorB = motor(PORT5, ratio6_1, true);
 motor_group LeftMotors = motor_group(LeftMotorsMotorA, LeftMotorsMotorB);
-motor RightMotorsMotorA = motor(PORT6, ratio6_1, false);
-motor RightMotorsMotorB = motor(PORT12, ratio6_1, false);
+motor RightMotorsMotorA = motor(PORT2, ratio6_1, false);
+motor RightMotorsMotorB = motor(PORT1, ratio6_1, false);
 motor_group RightMotors = motor_group(RightMotorsMotorA, RightMotorsMotorB);
 controller Controller1 = controller(primary);
-motor CatapultMotor = motor(PORT2, ratio36_1, false);
+motor CatapultMotor = motor(PORT6, ratio36_1, true);
 limit CataLimit = limit(Brain.ThreeWirePort.A);
 digital_out IntakePistonLeft = digital_out(Brain.ThreeWirePort.D);
 digital_out IntakePistonRight = digital_out(Brain.ThreeWirePort.C);
-digital_out WingPistonLeft = digital_out(Brain.ThreeWirePort.H);
+digital_out WingPistonLeft = digital_out(Brain.ThreeWirePort.G);
 digital_out WingPistonRight = digital_out(Brain.ThreeWirePort.E);
-motor IntakeMotorMotorA = motor(PORT14, ratio6_1, true);
-motor IntakeMotorMotorB = motor(PORT15, ratio6_1, false);
+motor IntakeMotorMotorA = motor(PORT11, ratio6_1, true);
+motor IntakeMotorMotorB = motor(PORT12, ratio6_1, false);
 motor_group IntakeMotor = motor_group(IntakeMotorMotorA, IntakeMotorMotorB);
+rotation Rotation9 = rotation(PORT19, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

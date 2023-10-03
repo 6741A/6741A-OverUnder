@@ -18,6 +18,7 @@ extern digital_out IntakePistonRight;
 extern digital_out WingPistonLeft;
 extern digital_out WingPistonRight;
 extern motor_group IntakeMotor;
+extern rotation Rotation9;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

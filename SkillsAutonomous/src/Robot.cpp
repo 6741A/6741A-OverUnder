@@ -17,10 +17,12 @@ void Robot::StartCatapultMatchLoading()
 { catapult.StartCatapultMatchLoading(); }
 
 void Robot::RetractCatapult()
-{ catapult.RetractCatapult(); cataDrawed = true; }
+{ catapult.RetractCatapult(); cataDrawed = true;// Rotation9.setPosition(0, degrees); }
+}
 
 void Robot::LaunchCatapult()
-{ catapult.LaunchCatapult(); cataDrawed = false; }
+{ catapult.LaunchCatapult(); cataDrawed = false;//Rotation9.setPosition(0, degrees); }
+}
 
 // Drivetrain Functionality
 

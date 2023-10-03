@@ -1,6 +1,674 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation9            rotation      19              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation19           rotation      19              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation9            rotation      9               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   F               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   E               
+// WingPistonRight      digital_out   F               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   F               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   B               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   11, 12          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         6               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         10              
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   2, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   2, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         5               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   C               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           13              
+// GPS8                 gps           21              
+// InertialSensor       inertial      19              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      18              
+// LeftMotors           motor_group   3, 11           
+// RightMotors          motor_group   6, 12           
+// Controller1          controller                    
+// CatapultMotor        motor         2               
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   G               
+// WingPistonLeft       digital_out   H               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   14, 15          
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
 // GPS9                 gps           13              
 // GPS8                 gps           21              
 // InertialSensor       inertial      19              
@@ -240,12 +908,11 @@ void autonomous(void) {
 */
 
 // Skill auton through hallway
-
+//robot.intake.ExtendIntake();
 //robot.catapult.StartCatapultMatchLoading();
-
-robot.base.RotateLocally(337, 25, 5);
-wait(1,sec);
-robot.intake.ExtendIntake();
+//wait(1, sec);
+robot.base.RotateLocally(334, 25, 5);
+wait(0.2,sec);
 robot.catapult.RetractCatapult();
 waitUntil(CataLimit);
 CatapultMotor.stop(hold);
@@ -253,30 +920,96 @@ CatapultMotor.stop(hold);
 robot.base.ForwardLocally(-35, 35, 10);
 wait(0.2, sec);
 
-InertialSensor.setHeading(5, degrees);
-robot.base.RotateLocally(41, 25, 5);
+//robot.intake.RetractIntake();
+
+InertialSensor.setHeading(10, degrees);
+
+robot.base.RotateLocally(79, 25, 5);
 wait(0.2, sec);
 
 
-
-robot.base.ForwardLocally(-43, 80, 10);
+robot.base.ForwardLocally(-43, 40, 10);
 wait(0.5, sec);
+
+robot.base.RotateLocally(180, 25, 5);
+wait(0.2, sec);
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-14, 40, 10);
+wait(0.5, sec);
+
+robot.base.RotateLocally(100, 25, 5);
+wait(0.2, sec);
+
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-14, 40, 10);
+wait(0.5, sec);
+
+robot.base.RotateLocally(20, 25, 5);
+wait(0.2, sec);
+
+robot.wings.ExtendWings();
+
+robot.base.ForwardLocally(-21, 100, 10);
+
+robot.base.RotateLocally(160, 25, 5);
+wait(0.2, sec);
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-19, 50, 10);
+
+robot.base.RotateLocally(20, 25, 5);
+wait(0.2, sec);
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-21, 100, 10);
+
+/*
+
+
+//robot.base.ForwardLocally(-44, 90, 10);
+//wait(0.5, sec);
 
 Controller1.Screen.print("bro");
 
 
-robot.base.ForwardLocally(-3, -40, 10);
-wait(0.5, sec);
-
-
-
-//robot.base.ForwardLocally(-28, 75, 10);
+//robot.base.ForwardLocally(-10, -40, 8);
 //wait(0.5, sec);
 
-/*robot.base.RotateLocally(330, 25, 2);
+robot.base.RotateLocally(185, 25, 5);
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-16, 40, 10);
+wait(0.5, sec);
+
+robot.base.RotateLocally(155, 25, 2);
 wait(0.2, sec);
 
-robot.base.ForwardLocally(-45, 80, 10);
+robot.base.ForwardLocally(-25, 40, 10);
+wait(0.5, sec);
+
+robot.base.RotateLocally(35, 25, 2);
+wait(0.2, sec);
+
+// Push into front
+robot.base.ForwardLocally(-38, 80, 10);
+wait(0.5, sec);
+
+robot.base.RotateLocally(155, 25, 2);
+wait(0.2, sec);
+
+robot.base.ForwardLocally(-25, 40, 10);
 wait(0.5, sec);*/
 
 // Skill auton over barrier
@@ -418,26 +1151,35 @@ void DriverControls() {
 
   // Catapult Controls 
 
-  if (!robot.cataDrawed)
+  //if (Rotation9.angle() > 350)
+  ///{
+  //  Rotation9.setPosition(5, degrees);
+  //}
+
+  if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350))
   {
 
-    CatapultMotor.spin(forward, 100, percent);
+    CatapultMotor.stop(hold);
+    robot.cataDrawed = true;
 
-    if (CataLimit)
+    if (Controller1.ButtonB.pressing())
     {
+      robot.cataDrawed = false;
 
-      CatapultMotor.stop(hold);
-      robot.cataDrawed = true;
-      
-    }
+      CatapultMotor.spin(forward, 100, percent);
 
+      // Wait so the brain doesnt recieve a million pressing() calls in one press
+      wait(0.2, sec);
+  }
+    
   }
 
+
   if (Controller1.ButtonB.pressing())
-  {
+  { Rotation9.setPosition(0, degrees);
+        robot.cataDrawed = false;
 
     CatapultMotor.spin(forward, 100, percent);
-    robot.cataDrawed = false;
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
@@ -496,11 +1238,13 @@ InertialSensor.resetHeading();
 
   //robot.catapult.StartCatapultMatchLoading();
 
+
   while (1) 
   {
 
     //robot.base.TrackPositionAndHeading();
     DriverControls();
+
 
     wait(20, msec);
 
@@ -510,13 +1254,13 @@ InertialSensor.resetHeading();
 
 int main() 
 {
-
+  Rotation9.setPosition(0, degrees);
+      CatapultMotor.spin(forward, 100, percent); 
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
 
   pre_auton();
-
-  
+ 
   // Prevent main from exiting with an infinite loop.
   while (true) 
   {
