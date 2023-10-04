@@ -31,18 +31,18 @@ void Catapult::StartCatapultMatchLoading()
 
     CatapultMotor.spin(forward, 100, percent);
 
-    if ((Rotation9.angle() > 62) && (added == false))
-    {
-
-      launches++;
-      added = true;
-      //waitUntil(!(Rotation9.angle() > 62));
-      
-    }
-
-    if (Rotation9.angle() < 62)
+    if (Rotation9.angle() < 59 || Rotation9.angle() > 350)
     {
       added = false;
+    }
+
+    if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350) && (added == false))
+    {
+
+      added = true;
+      launches++;
+      //waitUntil(!(Rotation9.angle() > 62));
+      
     }
 
     if (launches == 40)
@@ -55,3 +55,6 @@ void Catapult::StartCatapultMatchLoading()
   CatapultMotor.stop();
   
 }
+
+
+

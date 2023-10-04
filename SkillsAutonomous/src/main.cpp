@@ -440,6 +440,7 @@ int main()
 
   Rotation9.setPosition(0, degrees);
   CatapultMotor.spin(forward, 100, percent); 
+  robot.intake.ExtendIntake();
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
 
