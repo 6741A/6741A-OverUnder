@@ -88,70 +88,81 @@ void autonomous(void) {
 */
 
 // Skill auton through hallway
-//robot.intake.ExtendIntake();
-//robot.catapult.StartCatapultMatchLoading();
+robot.intake.ExtendIntake();
+LeftMotors.stop(hold);
+RightMotors.stop(hold);
+robot.catapult.StartCatapultMatchLoading();
 //wait(1, sec);
 robot.base.RotateLocally(334, 25, 5);
-wait(0.2,sec);
+//wait(0.2,sec);
 robot.catapult.RetractCatapult();
-waitUntil(CataLimit);
+waitUntil(Rotation9.angle() > 45);
 CatapultMotor.stop(hold);
 
-robot.base.ForwardLocally(-35, 35, 10);
+robot.base.ForwardLocally(-33, 75, 10);
 wait(0.2, sec);
 
 //robot.intake.RetractIntake();
 
 InertialSensor.setHeading(10, degrees);
 
-robot.base.RotateLocally(79, 25, 5);
+robot.base.RotateLocally(84, 25, 5);
 wait(0.2, sec);
 
 
-robot.base.ForwardLocally(-43, 40, 10);
-wait(0.5, sec);
+robot.base.ForwardLocally(-39, 75, 10);
+wait(0.2, sec);
 
-robot.base.RotateLocally(180, 25, 5);
+// face barrier
+
+robot.base.RotateLocally(183, 25, 5);
 wait(0.2, sec);
 
   RotationLeft.setPosition(0, degrees);
   RotationRight.setPosition(0, degrees);
 
-robot.base.ForwardLocally(-14, 40, 10);
-wait(0.5, sec);
+robot.base.ForwardLocally(-12, 75, 10);
+wait(0.2, sec);
 
-robot.base.RotateLocally(100, 25, 5);
+robot.base.RotateLocally(108, 25, 5);
 wait(0.2, sec);
 
 
   RotationLeft.setPosition(0, degrees);
   RotationRight.setPosition(0, degrees);
 
-robot.base.ForwardLocally(-14, 40, 10);
-wait(0.5, sec);
+robot.base.ForwardLocally(-12, 75, 10);
+wait(0.2, sec);
 
 robot.base.RotateLocally(20, 25, 5);
 wait(0.2, sec);
+
+
+
 
 robot.wings.ExtendWings();
 
-robot.base.ForwardLocally(-21, 100, 10);
+robot.base.ForwardLocally(-22, 100, 10);
 
-robot.base.RotateLocally(160, 25, 5);
+robot.base.RotateLocally(145, 25, 5);
+wait(0.2, sec);
+
+
+
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+robot.base.ForwardLocally(-16, 50, 10);
+
+robot.base.RotateLocally(22, 25, 5);
 wait(0.2, sec);
 
   RotationLeft.setPosition(0, degrees);
   RotationRight.setPosition(0, degrees);
 
-robot.base.ForwardLocally(-19, 50, 10);
+robot.base.ForwardLocally(-20, 100, 10);
 
-robot.base.RotateLocally(20, 25, 5);
-wait(0.2, sec);
 
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-21, 100, 10);
 
 /*
 
@@ -419,13 +430,15 @@ InertialSensor.resetHeading();
   robot.base.TrackPositionAndHeading();*/
   
 
-  robot.catapult.StartCatapultMatchLoading();
+ // robot.catapult.StartCatapultMatchLoading();
 
 
   while (1) 
   {
 
     //robot.base.TrackPositionAndHeading();
+
+
     DriverControls();
 
 

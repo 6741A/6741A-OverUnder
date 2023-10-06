@@ -17,6 +17,9 @@ void Catapult::LaunchCatapult()
 
 }
 
+int stoppingAngle = 60;
+int wrappingErrorAngle = 350;
+
 void Catapult::StartCatapultMatchLoading()
 {
 
@@ -25,18 +28,21 @@ void Catapult::StartCatapultMatchLoading()
 
   while (launches < 43)
   {
+
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(0,0);
     Controller1.Screen.print(launches);
+    Controller1.Screen.setCursor(0,5);
+    Controller1.Screen.print(InertialSensor.heading());
 
     CatapultMotor.spin(forward, 100, percent);
 
-    if (Rotation9.angle() < 59 || Rotation9.angle() > 350)
+    if (Rotation9.angle() < (stoppingAngle - 3) || Rotation9.angle() > wrappingErrorAngle)
     {
       added = false;
     }
 
-    if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350) && (added == false))
+    if ((Rotation9.angle() > stoppingAngle) && (Rotation9.angle() < wrappingErrorAngle) && (added == false))
     {
 
       added = true;
