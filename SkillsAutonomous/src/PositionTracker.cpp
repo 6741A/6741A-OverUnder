@@ -65,8 +65,7 @@ deltaTheta = (deltaL - deltaR) / (sL + sR)
 
 */
 
-void PositionTracker::UpdateSensorValues() 
-{
+void PositionTracker::UpdateSensorValues() {
 
   // Updates left and right rotation sensor values
   currentLeft = (RotationLeft.position(degrees));
@@ -78,7 +77,6 @@ void PositionTracker::UpdateSensorValues()
 
   // Calculates change in robot heading
   deltaTheta = (deltaRight - deltaLeft) / (SL + SR);
-
 }
 
 /*
@@ -95,23 +93,19 @@ it's reading.
 
 */
 
-void PositionTracker::CalculatePosition() 
-{
+void PositionTracker::CalculatePosition() {
 
   // True if there is no change in robot heading
-  if (deltaTheta == 0) 
-  {
+  if (deltaTheta == 0) {
 
     // Calculate X and Y Position using forward travel formula for their
     // respective values.
     X += deltaLeft * sin(Theta);
     Y += deltaLeft * cos(Theta);
-
   }
   // Otherwise, robot is curving, thus the length of the arc formed can be
   // determined
-  else 
-  {
+  else {
 
     // Calculate chord length with formula
     sideChord = 2 * ((deltaLeft / deltaTheta) + SL) * sin(deltaTheta / 2);
@@ -126,13 +120,11 @@ void PositionTracker::CalculatePosition()
     // Add change in X and Y position to cumulative X and Y position
     X += deltaX / 2;
     Y -= deltaY / 2;
-
   }
 
   // True if the reading quality difference between either GPS is within 2, use
   // both
-  if (abs(GPS9.quality() - GPS8.quality()) < 2) 
-  {
+  if (abs(GPS9.quality() - GPS8.quality()) < 2) {
 
     // Calculate average GPS X and Y Position
     averageGPSX = (GPS9.xPosition(inches) + GPS8.xPosition(inches)) / 2;
@@ -141,28 +133,23 @@ void PositionTracker::CalculatePosition()
     // Calculate average between odometry X and GPS X, likewise with Y
     combinedX = (X + averageGPSX) / 2;
     combinedY = (Y + averageGPSY) / 2;
-
   }
   // True if the second GPS has higher reading quality than the first,
   // then only use that one to determine position
-  else if (GPS9.quality() > GPS8.quality()) 
-  {
+  else if (GPS9.quality() > GPS8.quality()) {
 
     // Calculate average between odometry X and second GPS X, likewise with Y
     combinedX = (X + GPS9.xPosition(inches)) / 2;
     combinedY = (Y + GPS9.yPosition(inches)) / 2;
-
   }
   // True if the first GPS reading is higher than the second,
   // then only use that one to determine position
-  else 
-  {
+  else {
 
     // Calculate average between odometry X and first GPS X, likewise with Y
     combinedX = (X + GPS8.xPosition(inches)) / 2;
     combinedY = (Y + GPS8.yPosition(inches)) / 2;
   }
-
 }
 
 /*
@@ -172,71 +159,55 @@ heading value for percise heading measurements.
 
 */
 
-void PositionTracker::CalculateHeading() 
-{
+void PositionTracker::CalculateHeading() {
 
   // Checks edge cases where the odomety heading calculation returns a value
   // over 360 degrees
-  while (Theta > (2 * M_PI))
-  {
+  while (Theta > (2 * M_PI)) {
 
     // Subtracts 360 until it is within the range 0-360
     Theta -= 2 * M_PI;
-
   }
 
   // Checks edge cases where odometry heading calculation returns a value under
   // 0 degrees
-  while (Theta < 0) 
-  {
+  while (Theta < 0) {
 
     // Adds 360 until it is within the range 0-360
     Theta += 2 * M_PI;
-
   }
 
   // Checks edge case where the odometry value might be staggered from the
   // inertial value, such that one is in the 330+ range and the other is in the
   // 30- range
-  if ((Theta * 180 / M_PI) > 330 && InertialSensor.heading(degrees) < 30) 
-  {
+  if ((Theta * 180 / M_PI) > 330 && InertialSensor.heading(degrees) < 30) {
 
     // Ignores inertial reading and defaults to odometry value
     combinedHeading = Theta;
-
   }
   // Checks edge case where the odometry value might be staggered from the
   // inertial value, such that one is in the 30- range and the other is in the
   // 330+ range
-  else if ((Theta * 180 / M_PI) < 30 && InertialSensor.heading(degrees) > 330) 
-  {
+  else if ((Theta * 180 / M_PI) < 30 && InertialSensor.heading(degrees) > 330) {
 
     // Ignores odometry reading and defaults to inertial reading, converted to
     // radians
     combinedHeading = InertialSensor.heading(degrees) * (M_PI / 180);
-
   }
   // Checks edge case where the difference between the odometry and inertial
   // reading is too great, above 40, and defaults to odometry value
-  else if (abs(int(Theta * 180 / M_PI) - int(InertialSensor.heading(degrees))) > 40) 
-  {
+  else if (abs(int(Theta * 180 / M_PI) - int(InertialSensor.heading(degrees))) > 40) {
 
     // Ignores inertial reading and defaults to odometry value
     combinedHeading = Theta;
-
   }
   // In any other case, it has passed every edge case check
-  else 
-  {
+  else {
 
     // Combines the heading by taking the average of the odometry value and
     // inertial reading
     combinedHeading = (((InertialSensor.heading(degrees) * 1.05) * (M_PI / 180)) + Theta * (M_PI / 180));
-
   }
-
- // combinedHeading = InertialSensor.heading(degrees);
-
 }
 
 /*
@@ -247,8 +218,7 @@ debugging purposes. This visualizer was made by Sargarpatel.
 
 */
 
-void PositionTracker::FieldVisualizer() 
-{
+void PositionTracker::FieldVisualizer() {
 
   // Coordinates for each section of text
   int textadjustvalue = 55;
@@ -343,8 +313,7 @@ inertial sensor rotational readings.
 
 */
 
-void PositionTracker::TrackPositionAndHeading() 
-{
+void PositionTracker::TrackPositionAndHeading() {
 
   UpdateSensorValues();
   CalculatePosition();
@@ -364,11 +333,9 @@ void PositionTracker::TrackPositionAndHeading()
 
   // Visualize field and robot on brain for debugging purposes
   FieldVisualizer();
-    Controller1.Screen.clearScreen();
-    Controller1.Screen.setCursor(0, 0);
-    Controller1.Screen.print(robotOrientation);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.setCursor(0, 0);
+  Controller1.Screen.print(robotOrientation);
   // Wait every iteration to not overload brain
   wait(5, msec);
-
 }
-

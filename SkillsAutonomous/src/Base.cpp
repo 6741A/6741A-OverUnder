@@ -8,7 +8,6 @@
 using namespace vex;
 
 PositionTracker posTracker;
-
 float wheelCircumference = 3.25;
 
 /*
@@ -24,37 +23,27 @@ Arguments:
 */
 
 float shortestTurn = 0;
-
-void Base::TurnRobot(float output, float desiredHeading) 
-{
+void Base::TurnRobot(float output, float desiredHeading) {
 
   posTracker.TrackPositionAndHeading();
-
-  // Calculation to determine which direction rotating to reach desired heading
-  // is shortest
- // shortestTurn = ((int(posTracker.robotOrientation) - int(desiredHeading + (3 * M_PI)) % int((2 * M_PI)))) - M_PI;
+  // Calculation to determine which direction rotating to reach desired heading is shortest
+  // shortestTurn = ((int(posTracker.robotOrientation) - int(desiredHeading + (3 * M_PI)) % int((2 * M_PI)))) - M_PI;
   shortestTurn = (int(desiredHeading) - int(posTracker.robotOrientation) + 360) % 360;
   // If the calculated value is greater than zero, then rotation clockwise is
   // shorter
-  if (shortestTurn > 180) 
-  {
+  if (shortestTurn > 180) {
 
     // Rotate motors clockwise by output
     LeftMotors.spin(reverse, output, percent);
     RightMotors.spin(forward, output, percent);
-
   }
-  // If the calculated value is less than zero, then rotation counterclockwise
-  // is shorter
-  else 
-  {
+  // If the calculated value is less than zero, then rotation counterclockwise is shorter
+  else {
 
     // Rotate motors counterclockwise by output
     LeftMotors.spin(forward, output, percent);
     RightMotors.spin(reverse, output, percent);
-
   }
-
 }
 
 /*
@@ -68,13 +57,11 @@ Arguments:
 
 */
 
-void Base::DriveRobot(float output) 
-{
+void Base::DriveRobot(float output) {
 
   // Drives motors according to output
   LeftMotors.spin(reverse, output, percent);
   RightMotors.spin(reverse, output, percent);
-
 }
 
 /*
@@ -91,14 +78,10 @@ Arguments:
 
 PIDTemplate pid;
 
-void Base::Rotate(float desiredHeading, float roomForError) 
-{
-
-  while (true) 
-  {
+void Base::Rotate(float desiredHeading, float roomForError) {
+  while (true) {
 
     posTracker.TrackPositionAndHeading();
-
     TurnRobot(pid.PIDControlLoop(0.01, 0, 0, desiredHeading, posTracker.robotOrientation, false), desiredHeading);
 
     // Print values to controller for debugging purposes
@@ -108,8 +91,7 @@ void Base::Rotate(float desiredHeading, float roomForError)
     Controller1.Screen.print("    ");
     Controller1.Screen.print(posTracker.robotOrientation);
 
-    if (posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError)
-    {
+    if (posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError) {
 
       // Stop motors
       LeftMotors.stop();
@@ -122,7 +104,6 @@ void Base::Rotate(float desiredHeading, float roomForError)
 
       // Exit control loop
       break;
-
     }
   }
 }
@@ -131,36 +112,27 @@ void Base::RotateLocally(float desiredHeading, float pow, float roomForError) {
 
   shortestTurn = (int(desiredHeading) - int(InertialSensor.heading(degrees)) + 360) % 360;
 
+  while (abs(int(InertialSensor.heading(degrees)) - int(desiredHeading)) > roomForError) {
 
-  while (abs(int(InertialSensor.heading(degrees)) - int(desiredHeading)) > roomForError)
-  {
+    if (shortestTurn > 180) {
 
-      if (shortestTurn > 180) 
-  {
+      // Rotate motors clockwise by output
+      LeftMotors.spin(reverse, pow, percent);
+      RightMotors.spin(forward, pow, percent);
+    }
+    // If the calculated value is less than zero, then rotation counterclockwise
+    // is shorter
+    else {
 
-    // Rotate motors clockwise by output
-    LeftMotors.spin(reverse, pow, percent);
-    RightMotors.spin(forward, pow, percent);
+      // Rotate motors counterclockwise by output
+      LeftMotors.spin(forward, pow, percent);
+      RightMotors.spin(reverse, pow, percent);
+    }
+  } 
 
-  }
-  // If the calculated value is less than zero, then rotation counterclockwise
-  // is shorter
-  else 
-  {
-
-    // Rotate motors counterclockwise by output
-    LeftMotors.spin(forward, pow, percent);
-    RightMotors.spin(reverse, pow, percent);
-
-  }
-
-
-  }
-
-      LeftMotors.stop(hold);
-    RightMotors.stop(hold);
-    Controller1.Screen.print("done");
-
+  LeftMotors.stop(hold);
+  RightMotors.stop(hold);
+  Controller1.Screen.print("done");
 }
 
 /*
@@ -175,21 +147,17 @@ Arguments:
 
 */
 
-void Base::DriveForward(float targetDistance, float roomForError) 
-{
+void Base::DriveForward(float targetDistance, float roomForError) {
 
   RotationLeft.setPosition(0, turns);
   RotationRight.setPosition(0, turns);
-
   targetDistance /= 3;
 
-  while (true) 
-  {
+  while (true) {
 
     posTracker.TrackPositionAndHeading();
 
     float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
-
     DriveRobot(pid.PIDControlLoop(4, 0, 0, targetDistance, rotations, false));
 
     // Print values to controller for debugging purposes
@@ -199,9 +167,8 @@ void Base::DriveForward(float targetDistance, float roomForError)
     Controller1.Screen.print("    ");
     Controller1.Screen.print(rotations);
     //Controller1.Screen.print(pid.error);
-//posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
-    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) 
-    {
+    //posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
+    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) {
 
       // Stop motors
       LeftMotors.stop(hold);
@@ -214,24 +181,18 @@ void Base::DriveForward(float targetDistance, float roomForError)
 
       // Exit control loop
       break;
-
     }
-
   }
-
 }
 
-void Base::ForwardLocally(float targetDistance, float pow, float roomForError) 
-{
+void Base::ForwardLocally(float targetDistance, float pow, float roomForError) {
 
   LeftMotors.spin(forward, pow, percent);
   RightMotors.spin(forward, pow, percent);
 
-  while (true) 
-  {
+  while (true) {
 
     float rotations = ((RotationRight.position(turns) + RotationLeft.position(turns)) / 2) * wheelCircumference;
-
 
     // Print values to controller for debugging purposes
     Controller1.Screen.clearScreen();
@@ -239,30 +200,24 @@ void Base::ForwardLocally(float targetDistance, float pow, float roomForError)
     Controller1.Screen.print(targetDistance);
     Controller1.Screen.print("    ");
     Controller1.Screen.print(rotations);
-
-
-
     //Controller1.Screen.print(pid.error);
-//posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
-    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) 
-    {
+    //posTracker.robotOrientation < desiredHeading + roomForError && posTracker.robotOrientation > desiredHeading - roomForError
+    if (rotations < targetDistance + roomForError && rotations > targetDistance - roomForError) {
 
       // Stop motors
       LeftMotors.stop(hold);
       RightMotors.stop(hold);
 
       // Print done for debugging purposes
-     // Controller1.Screen.clearScreen();
+      // Controller1.Screen.clearScreen();
       Controller1.Screen.print("Done!");
-     // Controller1.Screen.print(posTracker.robotOrientation);
+      // Controller1.Screen.print(posTracker.robotOrientation);
 
       // Exit control loop
       break;
-
     }
   }
 }
-
 
 /*
 
@@ -278,24 +233,20 @@ Arguments:
 
 */
 
-void Base::GoTo(float targetX, float targetY, float rotationError, float distanceError) 
-{
+void Base::GoTo(float targetX, float targetY, float rotationError, float distanceError) {
 
   // Get current position.
   posTracker.TrackPositionAndHeading();
 
   // Calculate heading robot must face to point towards desired point
-  float turnAngle = atan2((targetY - posTracker.robotYPosition),
-                          (targetX - posTracker.robotXPosition));
+  float turnAngle = atan2((targetY - posTracker.robotYPosition), (targetX - posTracker.robotXPosition));
 
   // Use PID to face point
   Rotate(turnAngle * (180 / M_PI), rotationError);
 
   // Calculate forward distance robot must travel to reach desired point
-  float driveDistanceInches = sqrt((pow((targetX - posTracker.robotXPosition), 2)) +
-                                   (pow((targetY - posTracker.robotYPosition), 2)));
+  float driveDistanceInches = sqrt((pow((targetX - posTracker.robotXPosition), 2)) + (pow((targetY - posTracker.robotYPosition), 2)));
 
   // Use PID to reach point
   DriveForward(driveDistanceInches, distanceError);
-
 }

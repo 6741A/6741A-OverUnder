@@ -3,19 +3,15 @@
 
 using namespace vex;
 
-void Wings::ExtendWings()
-{
+void Wings::ExtendWings() {
 
   WingPistonLeft.set(true);
   WingPistonRight.set(true);
-
 }
 
 
-void Wings::RetractWings()
-{
+void Wings::RetractWings() {
 
   WingPistonLeft.set(false);
   WingPistonRight.set(false);
-
 }

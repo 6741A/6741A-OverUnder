@@ -3,39 +3,29 @@
 
 using namespace vex;
 
-void Intake::EnableIntake()
-{
+void Intake::EnableIntake() {
 
   IntakeMotor.spin(forward, 100, percent);
-
 }
 
-void Intake::ReverseIntake()
-{
+void Intake::ReverseIntake() {
 
   IntakeMotor.spin(reverse, 100, percent);
-
 }
 
-void Intake::DisableIntake()
-{
+void Intake::DisableIntake() {
 
   IntakeMotor.stop();
-
 }
 
-void Intake::ExtendIntake()
-{
+void Intake::ExtendIntake() {
 
   IntakePistonLeft = true;
   IntakePistonRight = true;
-  
 }
 
-void Intake::RetractIntake()
-{
+void Intake::RetractIntake() {
 
   IntakePistonLeft = false;
   IntakePistonRight = false;
-  
 }

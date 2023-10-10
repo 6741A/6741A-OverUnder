@@ -45,12 +45,10 @@ Robot robot;
 void pre_auton(void) {
 
   vexcodeInit();
-
   robot.base.robotXPosition = 0;
   robot.base.robotYPosition = 0;
   robot.base.robotOrientation = 0;
 
-  robot.base.robotOrientation = 0;
   InertialSensor.setHeading(0, degrees);
   RotationLeft.setPosition(0, degrees);
   RotationRight.setPosition(0, degrees);
@@ -66,7 +64,7 @@ void pre_auton(void) {
 void autonomous(void) {
 
   // Match Auton
-/*
+  /*
   robot.base.DriveForward(-30,5);
   wait(0.5,sec);
   robot.base.DriveForward(18,5);
@@ -85,371 +83,197 @@ void autonomous(void) {
   robot.base.Rotate(40,10);
   //robot.base.Rotate(220, 10);
   robot.base.DriveForward(28,5);
-*/
+  */
 
-// Skill auton through hallway
-robot.intake.ExtendIntake();
-LeftMotors.stop(hold);
-RightMotors.stop(hold);
-robot.catapult.StartCatapultMatchLoading();
-//wait(1, sec);
-robot.base.RotateLocally(334, 25, 5);
-//wait(0.2,sec);
-robot.catapult.RetractCatapult();
-waitUntil(Rotation9.angle() > 45);
-CatapultMotor.stop(hold);
+  // Skill auton through hallway
 
-robot.base.ForwardLocally(-33, 75, 10);
-wait(0.2, sec);
+  // Extend Intake
+  robot.intake.ExtendIntake();
 
-//robot.intake.RetractIntake();
+  // Freeze Robot
+  LeftMotors.stop(hold);
+  RightMotors.stop(hold);
 
-InertialSensor.setHeading(10, degrees);
-
-robot.base.RotateLocally(84, 25, 5);
-wait(0.2, sec);
-
-
-robot.base.ForwardLocally(-39, 75, 10);
-wait(0.2, sec);
-
-// face barrier
-
-robot.base.RotateLocally(183, 25, 5);
-wait(0.2, sec);
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-12, 75, 10);
-wait(0.2, sec);
-
-robot.base.RotateLocally(108, 25, 5);
-wait(0.2, sec);
-
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-12, 75, 10);
-wait(0.2, sec);
-
-robot.base.RotateLocally(20, 25, 5);
-wait(0.2, sec);
-
-
-
-
-robot.wings.ExtendWings();
-
-robot.base.ForwardLocally(-22, 100, 10);
-
-robot.base.RotateLocally(145, 25, 5);
-wait(0.2, sec);
-
-
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-16, 50, 10);
-
-robot.base.RotateLocally(22, 25, 5);
-wait(0.2, sec);
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-20, 100, 10);
-
-
-
-/*
-
-
-//robot.base.ForwardLocally(-44, 90, 10);
-//wait(0.5, sec);
-
-Controller1.Screen.print("bro");
-
-
-//robot.base.ForwardLocally(-10, -40, 8);
-//wait(0.5, sec);
-
-robot.base.RotateLocally(185, 25, 5);
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-robot.base.ForwardLocally(-16, 40, 10);
-wait(0.5, sec);
-
-robot.base.RotateLocally(155, 25, 2);
-wait(0.2, sec);
-
-robot.base.ForwardLocally(-25, 40, 10);
-wait(0.5, sec);
-
-robot.base.RotateLocally(35, 25, 2);
-wait(0.2, sec);
-
-// Push into front
-robot.base.ForwardLocally(-38, 80, 10);
-wait(0.5, sec);
-
-robot.base.RotateLocally(155, 25, 2);
-wait(0.2, sec);
-
-robot.base.ForwardLocally(-25, 40, 10);
-wait(0.5, sec);*/
-
-// Skill auton over barrier
-/*
-//robot.catapult.StartCatapultMatchLoading();
-// Go to middle of field
-robot.base.ForwardLocally(-20, 25, 10);
-wait(0.2, sec);
-// Retract cata
-robot.catapult.RetractCatapult();
-waitUntil(CataLimit);
-CatapultMotor.stop(hold);
-// Point to front of field
-robot.base.RotateLocally(342, 25, 3);
-wait(1,sec);
-// Drive over barrier and push nuts into goal
-robot.base.ForwardLocally(-50, 40, 10);
-wait(0.2, sec);
-// Back up
-robot.base.ForwardLocally(50, -25, 10);
-wait(0.2, sec);
-// Ram into goal again
-robot.base.ForwardLocally(-50, 40, 10);
-wait(0.2, sec);
-
-*/
-
-
-
-
-
-/*
-  // 0. Rotate parallel with match load bar, and back into it
-
-  robot.base.Rotate(45, 5);
-  robot.base.DriveForward(5, 1);
-
-  // 1. Shoot all 44 Match Loads over
-
+  // Match Load
   robot.catapult.StartCatapultMatchLoading();
 
-  // 2. Drive up to right side, then extend wings
+  // Face hallway
+  robot.base.RotateLocally(334, 25, 5);
+  robot.catapult.RetractCatapult();
+  waitUntil(Rotation9.angle() > 45);
+  CatapultMotor.stop(hold);
 
-  robot.base.Rotate(1, 5);
-  robot.base.DriveForward(50, 5);
+  // Drive through hallway
+  robot.base.ForwardLocally(-33, 75, 10);
+  wait(0.2, sec);
+
+  // Reset heading
+  InertialSensor.setHeading(10, degrees);
+
+  // Turn right out of hallway
+  robot.base.RotateLocally(84, 25, 5);
+  wait(0.2, sec);
+
+  // Move out of hallway
+  robot.base.ForwardLocally(-39, 75, 10);
+  wait(0.2, sec);
+
+  // Face barrier
+  robot.base.RotateLocally(183, 25, 5);
+  wait(0.2, sec);
+
+  // Reset rotation sensors
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+  // Move towards barrier
+  robot.base.ForwardLocally(-12, 75, 10);
+  wait(0.2, sec);
+
+  // Turn
+  robot.base.RotateLocally(108, 25, 5);
+  wait(0.2, sec);
+
+  // Reset rotation sensors
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
+
+  // Align wtih goal for first push
+  robot.base.ForwardLocally(-12, 75, 10);
+  wait(0.2, sec);
+
+  // Face goal
+  robot.base.RotateLocally(20, 25, 5);
+  wait(0.2, sec);
+
+  // Push nuts into goal
   robot.wings.ExtendWings();
+  robot.base.ForwardLocally(-22, 100, 10);
 
-  // 3. Push nuts forward
+  // Face away from goal for second push
+  robot.base.RotateLocally(145, 25, 5);
+  wait(0.2, sec);
 
-  robot.base.Rotate(45, 5);
-  robot.base.DriveForward(25, 5);  
+  // Reset rotation sensors
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
 
-  // 4. Line up with goal, push nuts into goal
+  // Back up
+  robot.base.ForwardLocally(-16, 50, 10);
 
-  robot.base.Rotate(90, 5);
-  robot.base.DriveForward(10, 5); 
+  // Face goal again
+  robot.base.RotateLocally(22, 25, 5);
+  wait(0.2, sec);
 
-  // 5. Back up to previous point
+  // Reset rotation sensors
+  RotationLeft.setPosition(0, degrees);
+  RotationRight.setPosition(0, degrees);
 
-  robot.base.DriveForward(-10, 5); 
-
-  // 6. Drive away from goal to mid barrier
-
-
-
-  // 7. Drive ⅓ distance of field
-
-*/
-
-  // 8. Face goal, extend wings, push nuts into goal
-
-
-
-  // 9. Drive back to previous position
-
-
-
-  // 10. Drive ⅔ distance of field
-
-
-
-  // 11. Face goal, extend wings, push nuts into goal
-
-
-
-  // 12. Drive back to previous position
-
-
-
-  // 13. Drive to other corner goal
-
-
-
-  // 14. Face goal, extend wings, push nuts into goal
+  // Push more nuts into goal
+  robot.base.ForwardLocally(-20, 100, 10);
 
 }
 
 void DriverControls() {
 
-//robot.intake.RetractIntake();
-
-  // Drivetrain Controls
+  /////////////////////////
+  // Drivetrain Controls //
+  /////////////////////////
 
   LeftMotors.spin(forward, (Controller1.Axis3.value() + (Controller1.Axis1.value() * 0.35) * 2), percent);
   RightMotors.spin(forward, (Controller1.Axis3.value() - (Controller1.Axis1.value() * 0.35) * 2), percent);
 
-  // Intake Controls
+  /////////////////////
+  // Intake Controls //
+  /////////////////////
 
   if (Controller1.ButtonR2.pressing()) {
 
     // Enable and disable intake with every other R2 press
     if (robot.intakeEnabled) { 
-
       robot.DisableIntake();
-
-    }
-    else { 
-
+    } else { 
       robot.EnableIntake(); 
-      
     }
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
-
   }
 
-  if (Controller1.ButtonR1.pressing())
-  {
+  if (Controller1.ButtonR1.pressing()) {
     
     // Enable and disable reverse intake with every other R2 press
-    if (robot.intakeEnabled) { robot.DisableIntake(); }
-    else { robot.ReverseIntake(); }
+    if (robot.intakeEnabled) { 
+      robot.DisableIntake(); 
+    } else { 
+      robot.ReverseIntake(); 
+    }
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
-
   }
 
-  // Catapult Controls 
+  ///////////////////////
+  // Catapult Controls //
+  ///////////////////////
 
-  //if (Rotation9.angle() > 350)
-  ///{
-  //  Rotation9.setPosition(5, degrees);
-  //}
-
-  if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350))
-  {
+  // Check if catapult is within stopping range
+  if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350)) {
 
     CatapultMotor.stop(hold);
-    robot.cataDrawed = true;
 
-    if (Controller1.ButtonB.pressing())
-    {
-      robot.cataDrawed = false;
+    // Check for user input to launch cata
+    if (Controller1.ButtonB.pressing()) {
 
       CatapultMotor.spin(forward, 100, percent);
 
       // Wait so the brain doesnt recieve a million pressing() calls in one press
       wait(0.2, sec);
-  }
-    
-  }
-
-
-  if (Controller1.ButtonB.pressing())
-  { Rotation9.setPosition(0, degrees);
-        robot.cataDrawed = false;
-
-    CatapultMotor.spin(forward, 100, percent);
-
-    // Wait so the brain doesnt recieve a million pressing() calls in one press
-    wait(0.2, sec);
-    
+    }
   }
 
+  ///////////////////
+  // Wing Controls //
+  ///////////////////
 
-  // Wing Controls
-
-  if (Controller1.ButtonA.pressing())
-  {
+  if (Controller1.ButtonA.pressing()) {
 
     // Extend and retract wings with every other A press
-    if (robot.wingsExtended) 
-    { robot.RetractWings(); }
-
-    else
-    { robot.ExtendWings(); }
+    if (robot.wingsExtended) { 
+      robot.RetractWings(); 
+    } else { 
+      robot.ExtendWings(); 
+    }
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
-    
   }
 
-  if (Controller1.ButtonLeft.pressing())
-  {
+  if (Controller1.ButtonLeft.pressing()) {
 
     // Extend and retract wings with every other A press
-    if (robot.intakeExtended) { robot.RetractIntake(); }
-    else { robot.ExtendIntake(); }
+    if (robot.intakeExtended) { 
+      robot.RetractIntake(); 
+    } else { 
+      robot.ExtendIntake(); 
+    }
 
     // Wait so the brain doesnt recieve a million pressing() calls in one press
     wait(0.2, sec);
-    
   }
-
-  if (CataLimit)
-  {
-    CatapultMotor.stop(hold);
-  }
-
 }
 
 
-void usercontrol(void) 
-{
- /* InertialSensor.startCalibration();
-InertialSensor.resetHeading();
-
-  RotationLeft.setPosition(0, degrees);
-  RotationRight.setPosition(0, degrees);
-
-  robot.base.robotXPosition = 0;
-  robot.base.robotYPosition = 0;
-  robot.base.robotOrientation = 0;
-
-  robot.base.TrackPositionAndHeading();*/
-  
-
- // robot.catapult.StartCatapultMatchLoading();
-
-
-  while (1) 
-  {
-
+void usercontrol(void) {
+  // robot.catapult.StartCatapultMatchLoading();
+  while (1) {
     //robot.base.TrackPositionAndHeading();
-
-
     DriverControls();
-
-
     wait(20, msec);
-
   }
-
 }
 
-int main() 
-{
+int main() {
 
   Rotation9.setPosition(0, degrees);
   CatapultMotor.spin(forward, 100, percent); 
@@ -460,9 +284,7 @@ int main()
   pre_auton();
  
   // Prevent main from exiting with an infinite loop.
-  while (true) 
-  {
+  while (true) {
     wait(100, msec);
   }
-  
 }

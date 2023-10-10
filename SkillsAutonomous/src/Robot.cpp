@@ -13,61 +13,92 @@ Catapult catapult;
 
 bool cataDrawed = false;
 
-void Robot::StartCatapultMatchLoading()
-{ catapult.StartCatapultMatchLoading(); }
+void Robot::StartCatapultMatchLoading() { 
 
-void Robot::RetractCatapult()
-{ catapult.RetractCatapult(); cataDrawed = true;// Rotation9.setPosition(0, degrees); }
+  catapult.StartCatapultMatchLoading(); 
 }
 
-void Robot::LaunchCatapult()
-{ catapult.LaunchCatapult(); cataDrawed = false;//Rotation9.setPosition(0, degrees); }
+void Robot::RetractCatapult() { 
+
+  catapult.RetractCatapult();
+  cataDrawed = true;
+}
+
+void Robot::LaunchCatapult() {
+
+  catapult.LaunchCatapult();
+  cataDrawed = false;
 }
 
 // Drivetrain Functionality
 
 Base base;
 
-void Robot::Rotate(float desiredHeading, float roomForError)
-{ base.Rotate(desiredHeading, roomForError); }
+void Robot::Rotate(float desiredHeading, float roomForError) { 
 
-void Robot::DriveForward(float targetDistance, float roomForError)
-{ base.DriveForward(targetDistance, roomForError); }
+  base.Rotate(desiredHeading, roomForError); 
+}
 
-void Robot::GoTo(float targetX, float targetY, float rotationError, float distanceError)
-{ base.GoTo(targetX, targetY, rotationError, distanceError); }
+void Robot::DriveForward(float targetDistance, float roomForError) { 
+
+  base.DriveForward(targetDistance, roomForError); 
+}
+
+void Robot::GoTo(float targetX, float targetY, float rotationError, float distanceError) { 
+
+  base.GoTo(targetX, targetY, rotationError, distanceError); 
+}
 
 // Intake Functionality
 
 Intake intake;
-
 bool intakeEnabled = false;
 bool intakeExtended = false;
 
-void Robot::EnableIntake()
-{ intake.EnableIntake(); intakeEnabled = true; }
+void Robot::EnableIntake() { 
 
-void Robot::ReverseIntake()
-{ intake.ReverseIntake(); intakeEnabled = true; }
+  intake.EnableIntake(); 
+  intakeEnabled = true; 
+}
 
-void Robot::DisableIntake()
-{ intake.DisableIntake(); intakeEnabled = false; }
+void Robot::ReverseIntake() { 
 
-void Robot::ExtendIntake()
-{ intake.ExtendIntake(); intakeExtended = true; }
+  intake.ReverseIntake(); 
+  intakeEnabled = true; 
+}
 
-void Robot::RetractIntake()
-{ intake.RetractIntake(); intakeExtended = false; }
+void Robot::DisableIntake() { 
+
+  intake.DisableIntake(); 
+  intakeEnabled = false; 
+}
+
+void Robot::ExtendIntake() { 
+
+  intake.ExtendIntake(); 
+  intakeExtended = true; 
+}
+
+void Robot::RetractIntake() {
+
+  intake.RetractIntake(); 
+  intakeExtended = false; 
+}
 
 // Wings Functionality
 
 Wings wings;
-
 bool wingsExtended;
 
-void Robot::ExtendWings()
-{ wings.ExtendWings(); wingsExtended = true; }
+void Robot::ExtendWings() { 
+  
+  wings.ExtendWings(); 
+  wingsExtended = true; 
+}
 
-void Robot::RetractWings()
-{ wings.RetractWings(); wingsExtended = false; }
+void Robot::RetractWings() {
+
+  wings.RetractWings(); 
+  wingsExtended = false; 
+}
 

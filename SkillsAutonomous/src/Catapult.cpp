@@ -3,31 +3,23 @@
 
 using namespace vex;
 
-void Catapult::RetractCatapult()
-{
+void Catapult::RetractCatapult() {
 
   CatapultMotor.spin(forward, 100, percent);
-  
 }
 
-void Catapult::LaunchCatapult()
-{
+void Catapult::LaunchCatapult() {
 
   CatapultMotor.spin(forward, 100, percent);
-
 }
 
-int stoppingAngle = 60;
+int stoppingAngle = 50;
 int wrappingErrorAngle = 350;
-
-void Catapult::StartCatapultMatchLoading()
-{
+void Catapult::StartCatapultMatchLoading() {
 
   int launches = 0;
   bool added = false;
-
-  while (launches < 43)
-  {
+  while (launches < 44) {
 
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(0,0);
@@ -37,30 +29,22 @@ void Catapult::StartCatapultMatchLoading()
 
     CatapultMotor.spin(forward, 100, percent);
 
-    if (Rotation9.angle() < (stoppingAngle - 3) || Rotation9.angle() > wrappingErrorAngle)
-    {
+    if (Rotation9.angle() < (stoppingAngle) || Rotation9.angle() > wrappingErrorAngle) {
+
       added = false;
     }
 
-    if ((Rotation9.angle() > stoppingAngle) && (Rotation9.angle() < wrappingErrorAngle) && (added == false))
-    {
+    if ((Rotation9.angle() > stoppingAngle) && (Rotation9.angle() < wrappingErrorAngle) && (added == false)) {
 
       added = true;
-      launches++;
-      //waitUntil(!(Rotation9.angle() > 62));
-      
+      launches++;      
     }
 
-    if (launches == 40)
-    {
+    if (launches == 40) {
+
       Controller1.rumble(". . . .");
     }
-
   }
 
   CatapultMotor.stop();
-  
 }
-
-
-
