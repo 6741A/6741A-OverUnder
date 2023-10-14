@@ -20,7 +20,6 @@ motor RightMotorsMotorA = motor(PORT2, ratio6_1, false);
 motor RightMotorsMotorB = motor(PORT1, ratio6_1, false);
 motor_group RightMotors = motor_group(RightMotorsMotorA, RightMotorsMotorB);
 controller Controller1 = controller(primary);
-motor CatapultMotor = motor(PORT6, ratio36_1, true);
 limit CataLimit = limit(Brain.ThreeWirePort.A);
 digital_out IntakePistonLeft = digital_out(Brain.ThreeWirePort.D);
 digital_out IntakePistonRight = digital_out(Brain.ThreeWirePort.C);
@@ -30,6 +29,9 @@ motor IntakeMotorMotorA = motor(PORT11, ratio6_1, true);
 motor IntakeMotorMotorB = motor(PORT12, ratio6_1, false);
 motor_group IntakeMotor = motor_group(IntakeMotorMotorA, IntakeMotorMotorB);
 rotation Rotation9 = rotation(PORT19, false);
+motor CatapultMotorMotorA = motor(PORT8, ratio36_1, false);
+motor CatapultMotorMotorB = motor(PORT6, ratio36_1, true);
+motor_group CatapultMotor = motor_group(CatapultMotorMotorA, CatapultMotorMotorB);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

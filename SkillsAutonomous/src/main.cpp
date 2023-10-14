@@ -1,3 +1,62 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation9            rotation      19              
+// CatapultMotor        motor_group   8, 6            
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation9            rotation      19              
+// CatapultMotor        motor_group   8, 6            
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// GPS9                 gps           18              
+// GPS8                 gps           21              
+// InertialSensor       inertial      13              
+// RotationLeft         rotation      20              
+// RotationRight        rotation      7               
+// LeftMotors           motor_group   3, 5            
+// RightMotors          motor_group   2, 1            
+// Controller1          controller                    
+// CataLimit            limit         A               
+// IntakePistonLeft     digital_out   D               
+// IntakePistonRight    digital_out   C               
+// WingPistonLeft       digital_out   G               
+// WingPistonRight      digital_out   E               
+// IntakeMotor          motor_group   11, 12          
+// Rotation9            rotation      19              
+// ---- END VEXCODE CONFIGURED DEVICES ----
 
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
@@ -87,6 +146,7 @@ void autonomous(void) {
 
   // Skill auton through hallway
 
+
   // Extend Intake
   robot.intake.ExtendIntake();
 
@@ -95,12 +155,12 @@ void autonomous(void) {
   RightMotors.stop(hold);
 
   // Match Load
-  robot.catapult.StartCatapultMatchLoading();
+  //robot.catapult.StartCatapultMatchLoading();
 
   // Face hallway
   robot.base.RotateLocally(334, 25, 5);
   robot.catapult.RetractCatapult();
-  waitUntil(Rotation9.angle() > 45);
+  waitUntil(Rotation9.angle() < 300);
   CatapultMotor.stop(hold);
 
   // Drive through hallway
@@ -218,7 +278,7 @@ void DriverControls() {
   ///////////////////////
 
   // Check if catapult is within stopping range
-  if ((Rotation9.angle() > 62) && (Rotation9.angle() < 350)) {
+  if ((Rotation9.angle() < 300) && (Rotation9.angle() > 280)) {
 
     CatapultMotor.stop(hold);
 
@@ -265,7 +325,7 @@ void DriverControls() {
 
 
 void usercontrol(void) {
-  // robot.catapult.StartCatapultMatchLoading();
+   robot.catapult.StartCatapultMatchLoading();
   while (1) {
     //robot.base.TrackPositionAndHeading();
     DriverControls();
